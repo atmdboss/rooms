@@ -13,11 +13,11 @@
 body {
   font-family: 'Spartan', sans-serif;
   width: 100vw;
-  height: 200vh;
+  height: 250vh;
   font-size: $fontSize;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 2fr 1fr 1.3fr 1fr;
+  grid-template-rows: 2fr 1.4fr 1fr 1.2fr 1fr;
   grid-template-areas:
     'header'
     'main'
@@ -37,11 +37,11 @@ body {
 }
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
-  @include desktop {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  @include ipad {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }

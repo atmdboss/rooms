@@ -3,6 +3,7 @@ const navBtn = document.getElementById('nav-btn');
 const slidePrevBtn = document.getElementById('prev-slide');
 const slideNextBtn = document.getElementById('next-slide');
 const slideItems = document.getElementsByClassName('carousel-item');
+const detailItems = document.getElementsByClassName('detail-item');
 let slideIndex = 0;
 
 navBtn.addEventListener('click', function () {
@@ -22,7 +23,11 @@ slidePrevBtn.addEventListener('click', () => {
   for (const slide of slideItems) {
     slide.classList.remove('visible');
   }
+  for (const detail of detailItems) {
+    detail.classList.remove('visible');
+  }
   slideItems[slideIndex].classList.add('visible');
+  detailItems[slideIndex].classList.add('visible');
 });
 slideNextBtn.addEventListener('click', () => {
   if (slideIndex === 2) {
@@ -33,5 +38,9 @@ slideNextBtn.addEventListener('click', () => {
   for (const slide of slideItems) {
     slide.classList.remove('visible');
   }
+  for (const detail of detailItems) {
+    detail.classList.remove('visible');
+  }
   slideItems[slideIndex].classList.add('visible');
+  detailItems[slideIndex].classList.add('visible');
 });

@@ -33,6 +33,7 @@ header nav div span {
           flex-grow: 1;
   text-align: center;
   color: white;
+  font-weight: 700;
   font-size: 17px;
 }
 
@@ -142,6 +143,28 @@ header .hero .carousel .carousel-item.visible {
           animation: slide 0.5s ease-in-out;
 }
 
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: opacity linear;
+            transform: opacity linear;
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: opacity linear;
+            transform: opacity linear;
+  }
+}
+
 header .hero .btns {
   position: absolute;
   right: 0;
@@ -168,15 +191,51 @@ header .hero .btns button:hover {
   background-color: #454545;
 }
 
-@-webkit-keyframes slide {
-  0% {
-    opacity: 0;
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .details {
+  margin-bottom: 2rem;
+}
+
+main .details .detail-item {
+  display: none;
+}
+
+main .details .detail-item h1 {
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  main .details .detail-item h1 {
+    font-size: 36px;
   }
-  100% {
-    opacity: 1;
-    -webkit-transform: opacity linear;
-            transform: opacity linear;
-  }
+}
+
+main .details .detail-item p {
+  color: #a1a1a1;
+  font-size: 10px;
+  line-height: 1.25rem;
+  margin-top: 1rem;
+}
+
+main .details .detail-item.visible {
+  display: block;
+  -webkit-animation: slide 0.5s ease-in-out;
+          animation: slide 0.5s ease-in-out;
 }
 
 @keyframes slide {
@@ -190,10 +249,11 @@ header .hero .btns button:hover {
   }
 }
 
-main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: main;
+main a {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
 }
 
 #image {
@@ -212,6 +272,36 @@ main {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: about;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#about h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+#about p {
+  color: #a1a1a1;
+  font-size: 10px;
+  line-height: 1.25rem;
+  margin-top: 1rem;
+}
+
+#image img,
+#image2 img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 * {
@@ -224,14 +314,14 @@ main {
 body {
   font-family: 'Spartan', sans-serif;
   width: 100vw;
-  height: 200vh;
+  height: 250vh;
   font-size: 12px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 2fr 2fr 1fr 1.3fr 1fr;
-      grid-template-rows: 2fr 2fr 1fr 1.3fr 1fr;
+  -ms-grid-rows: 2fr 1.4fr 1fr 1.2fr 1fr;
+      grid-template-rows: 2fr 1.4fr 1fr 1.2fr 1fr;
       grid-template-areas: 'header' 'main' 'image' 'about' 'image2';
 }
 
@@ -247,14 +337,14 @@ body {
 }
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 /*# sourceMappingURL=app.css.map */
