@@ -1,0 +1,27 @@
+$darkGrey: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$veryDarkGrey: hsl(0, 0%, 27%);
+
+$fontSize: 12px;
+
+$ipadSize: 768px;
+$desktopSize: 1280px;
+
+@mixin ipad {
+  @media (min-width:#{$ipadSize}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width:#{$desktopSize}) {
+    @content;
+  }
+}
+
+@mixin btnReset {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
